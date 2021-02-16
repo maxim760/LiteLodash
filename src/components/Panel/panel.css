@@ -1,9 +1,11 @@
 .panel {
+  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 20%;
   flex-basis: 20%;
-  padding: 15px;
+  padding: 15px 2px 15px 15px;
   z-index: 5;
   box-shadow: 2px 0px 5px rgba(0,0,0,0.23);
 }
@@ -15,6 +17,7 @@
   padding: 3px 5px;
   border-bottom: 2px solid #c5c5c5;
   transition: all 0.22s ease-in;
+  margin-right: 13px;
 }
 .panel__search:focus-within {
   border-bottom-color: #918787;
@@ -25,6 +28,11 @@
   margin: 0;
   outline: 0;
   width: 100%;
+}
+
+.panel__list {
+  max-height: 100wh;
+  overflow-y: scroll;
 }
 
 .panel__list-item + .panel__list-item {
@@ -61,6 +69,7 @@
   border-left: 1px dashed #C5C5C5;
 }
 .panel__text {
+  padding-left: 6px;
   margin-bottom: 8px;
   color: rgba(0,0,0,0.6);
   transition: all 0.22s ease-in

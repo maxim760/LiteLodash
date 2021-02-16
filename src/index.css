@@ -38,7 +38,10 @@ svg {
   display: block;
 }
 
-input,select,button,textarea {
+input,
+select,
+button,
+textarea {
   font: inherit;
 }
 
@@ -50,6 +53,20 @@ a {
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+.panel__list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel__list::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+.panel__list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 5px;
+  height: 6rem !important;
 }
 
 .app {

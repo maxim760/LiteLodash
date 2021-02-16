@@ -1,4 +1,5 @@
 .main {
+  margin-left: 20%;
   padding: 20px 0;
   flex-grow: 1;
 }
@@ -66,4 +67,42 @@
   line-height: 1.5;
   display: flex;
   flex-direction: column;
+}
+.code {
+  position: relative;
+}
+
+.copy {
+  cursor: pointer;
+position: absolute;
+color: wheat;
+border-radius: 12px;
+  right: 10px;
+  top: 10px;
+  padding: 5px 10px;
+  border: 1px dashed wheat;
+  transition: all 0.22s ease-in;
+}
+
+.copy:hover {
+  font-weight: 600;
+  background-color: #E7DDFF;
+  border-color:  #E7DDFF;
+  color: #5f5f5f
+}
+
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+  color: #5f5f5f;
+  font-size: 1.2rem;
+  background-color: rgba(0, 219, 139, 0.6);
+  z-index: 10;
 }

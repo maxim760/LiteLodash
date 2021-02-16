@@ -9,17 +9,17 @@ export const flattenDeep = (array: any[]): any => {
   return fake;
 };
 
-console.log(flattenDeep([1, 2, 3, 4, 5]));
-console.log(flattenDeep([1, 2, 3, [4, 5]]));
-console.log(flattenDeep([1, 2, 3, [4, [5]]]));
-console.log(flattenDeep([1, 2, 3, [4, [[5]]]]));
-console.log(flattenDeep([1, [[[[[[[[[[[[2]]]]]]]]]]]], 3, [4, [[5]]]]));
-console.log(
-  flattenDeep([
-    [
-      [1, [2, 3]],
-      [[4], [[5]]],
-    ],
-  ])
-);
-console.log(flattenDeep([1, 2, 3, [[4], [[[5]]]]]));
+// console.log(flattenDeep([1, 2, 3, 4, 5]));
+// console.log(flattenDeep([1, 2, 3, [4, 5]]));
+// console.log(flattenDeep([1, 2, 3, [4, [5]]]));
+// console.log(flattenDeep([1, 2, 3, [4, [[5]]]]));
+// console.log(flattenDeep([1, [[[[[[[[[[[[2]]]]]]]]]]]], 3, [4, [[5]]]]));
+// console.log(
+//   flattenDeep([
+//     [
+//       [1, [2, 3]],
+//       [[4], [[5]]],
+//     ],
+//   ])
+// );
+// console.log(flattenDeep([1, 2, 3, [[4], [[[5]]]]]));
