@@ -14,9 +14,8 @@ export const unionBy = (...arrays: any) => {
   }, []);
 };
 
-console.log(unionBy([2.1], [1.2, 2.3], Math.floor));
-// => [2.1, 1.2]
+// console.log(unionBy([2.1], [1.2, 2.3], Math.floor));
+// // => [2.1, 1.2]
 
-// The `console.log(property` iteratee shorthand.
-console.log(unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], "x"))
-// => [{ 'x': 1 }, { 'x': 2 }]
+// console.log(unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], "x"))
+// // => [{ 'x': 1 }, { 'x': 2 }]

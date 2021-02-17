@@ -35,11 +35,11 @@ export const Main = ({}) => {
     <>
       {isShowAlert && <div className="alert">✔ Copied to clipboard!</div>}
       <div className="main">
-        {categories.map(({ title, items }) => (
-          <div className="main__category">
+        {categories.map(({ title, items }, i) => (
+          <div className="main__category" key={i}>
             <h1 className="main__category-name">“{title}” Methods </h1>
-            {items.map((method) => (
-              <div className="main__function" id={method}>
+            {items.map((method, idx) => (
+              <div className="main__function" id={method} key={idx}>
                 <div className="main__function-name">
                   {method}
                   {`(array, [size=1])`}

@@ -53,7 +53,7 @@ import { unionWith } from "./unionWith";
 import { uniq } from "./uniq";
 import { uniqBy } from "./uniqBy";
 import { uniqWith } from "./uniqWith";
-import { unzip } from "zlib";
+import { unzip } from "./unzip";
 import { unzipWith } from "./unzipWith";
 import { without } from "./without";
 import { xor } from "./xor";
