@@ -12,6 +12,11 @@ import {
   overArgs,
   partial,
   partialRight,
+  rearg,
+  rest,
+  spread,
+  unary,
+  wrap,
 } from ".";
 
 describe("function", () => {
@@ -324,6 +329,61 @@ describe("function", () => {
     it("args on inizialization is ignore", () => {
       const sayHelloTo = partialRight(greet, "React", "Vue");
       expect(sayHelloTo("Svelte", "Angular")).toBe("Svelte Angular");
+    });
+  });
+
+  describe("rearg", () => {
+    test("rearg , arguments in another order", () => {
+      const rearged = rearg(
+        function (a: any, b: any, c: any) {
+          return [a, b, c];
+        },
+        [2, 0, 1]
+      );
+      expect(rearged("b", "c", "a")).toEqual(["a", "b", "c"]);
+    });
+  });
+
+  describe("rest", () => {
+    const say = rest(function (what: any, names: any[]) {
+      return what + " " + names.join(", ") + "last: " + names[names.length - 1];
+    });
+    test("rest test ", () => {
+      expect(say("hello", "fred", "barney", "pebbles")).toBe(
+        "hello fred, barney, pebbleslast: pebbles"
+      );
+    });
+  });
+
+  describe("spread", () => {
+    test("spread test string ", () => {
+      const say = spread(function (who: any, what: any) {
+        return who + " says " + what;
+      });
+
+      expect(say(["fred", "hello"])).toBe("fred says hello");
+    });
+  });
+
+  describe("unary", () => {
+    test("unary twsting onlu first arguments", () => {
+      const unared = unary((...args: any) => [...args]);
+      //@ts-ignore
+      expect(unared(1, 2, 3, 5)).toEqual([1]);
+    });
+  });
+
+  describe("wrap", () => {
+    const p = wrap(
+      (x: any) => x.repeat(2),
+      function (func: Function, text: string) {
+        return "<p>" + func(text) + "</p>";
+      }
+    );
+    test("retrurn res of function in <p>", () => {
+      expect(p("fred, barney, & pebbles")).toEqual(
+        "<p>fred, barney, & pebblesfred, barney, & pebbles</p>"
+      );
     });
   });
 });

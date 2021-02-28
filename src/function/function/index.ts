@@ -128,9 +128,71 @@ export const overArgs = (func: Function, transform: any) => {
 };
 
 export const partial = (func: Function, ...partials: any[]) => {
-  return (...args: any[]) => func(...partials.concat(args))
-}
+  return (...args: any[]) => func(...partials.concat(args));
+};
 export const partialRight = (func: Function, ...partials: any[]) => {
-  return (...args: any[]) => func(...args.concat(partials))
+  return (...args: any[]) => func(...args.concat(partials));
+};
+
+export const rearg = (func: Function, ...rest: any) => {
+  const indexes = rest.flat(); // 1,2,3 => [1,2,3], [1,2,3] => [[1,2,3]], поэтому flat
+  console.log(indexes, " idx");
+  return (...args: any) => {
+    return func(...indexes.map((idx: number) => args[idx]));
+  };
+};
+
+export const rest = (func: Function, start: number = func.length - 1) => {
+  return (...args: any[]) => {
+    const nonRest = args.slice(0, func.length - 1);
+    const restParams = args.slice(start);
+    return func(...nonRest, restParams);
+  };
+};
+
+export const spread = (func: Function, start: number = 0) => {
+  return (...args: any[]) => {
+    return func(...args.flat().slice(start));
+  };
+};
+
+export const throttle = (func: Function, wait: number) => {
+  let lastTime = 0;
+  return () => {
+    const now = Date.now();
+    if (now - lastTime >= wait) {
+      func();
+      lastTime = now;
+    }
+  };
+};
+
+export const unary = (func: Function) => {
+  return (first: any): void => {
+    return func(first);
+  };
+};
+
+export const wrap = (value: Function, wrapper: Function) => {
+  // return (...args: any[]) => {
+  //   value.apply(null, args)
+  // }
+  return (...args: any) => wrapper(value,...args)
 }
+
+const p = wrap((x: any) => x.repeat(2), function(func: Function,text: string) {
+    return '<p>' + func(text) + '</p>';
+  });
+   
+  console.log(p('fred, barney, & pebbles'));
+  // => '<p>fred, barney, &amp; pebbles</p>'
+
+
+
+
+
+
+
+
+
 
