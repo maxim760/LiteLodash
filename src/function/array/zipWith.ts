@@ -8,7 +8,7 @@ export const zipWith = (...arrays: any) => {
   return res
 };
 
-console.log(zipWith([1, 2], [10, 20], [100, 200], function(a: any, b: any, c: any) {
-  return a + b + c;
-}));
+// console.log(zipWith([1, 2], [10, 20], [100, 200], function(a: any, b: any, c: any) {
+//   return a + b + c;
+// }));
 // => [111, 222]

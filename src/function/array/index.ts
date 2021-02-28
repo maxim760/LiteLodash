@@ -63,6 +63,9 @@ import { zip } from "./zip";
 import { zipObject } from "./zipObject";
 import { zipObjectDeep } from "./zipObjectDeep";
 import { zipWith } from "./zipWith";
+import { forEach } from "../collection";
+import { after } from "../function";
+
 
 export {
   chunk,
@@ -130,4 +133,6 @@ export {
   zipObject,
   zipObjectDeep,
   zipWith,
+  forEach,
+  after
 };

@@ -2,8 +2,8 @@ export const takeWhile = (array: any, predicate: any) => {
   const check = (item: any) =>
     typeof predicate === "function"
       ? predicate(item)
-      : typeof predicate === "string" || item[predicate] === true
-      ? item === predicate.toString()
+      : typeof predicate === "string" 
+      ? item === predicate.toString() || item[predicate] === true
       : Array.isArray(predicate)
       ? Object.keys(item).some(
           (compKey) =>
