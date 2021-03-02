@@ -26,7 +26,6 @@ export const Panel: React.FC<PanelProps> = ({}): React.ReactElement => {
 
   const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
-    console.log(value);
     const regex = new RegExp(query, "gi");
     setValue(query);
     setCategories((prev) => prev.reduce(filterByQuery(regex), []));

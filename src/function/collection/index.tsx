@@ -174,7 +174,6 @@ export const invokeMap = (collection: any[], path: any, ...args: any) => {
   if (!args?.length) {
     args = [undefined];
   }
-  console.log(args);
   return collection.map((item) => {
     return typeof path === "function"
       ? path.apply(item, args)

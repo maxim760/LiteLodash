@@ -65,6 +65,7 @@ import { zipObjectDeep } from "./zipObjectDeep";
 import { zipWith } from "./zipWith";
 import { forEach } from "../collection";
 import { after } from "../function";
+import { isMap } from "../lang";
 
 
 export {
@@ -134,5 +135,6 @@ export {
   zipObjectDeep,
   zipWith,
   forEach,
-  after
+  after,
+  isMap  
 };

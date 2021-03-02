@@ -109,7 +109,6 @@ export const once = (func: Function) => {
     count++;
     if (count === 1) {
       res = func(...args);
-      console.log(res);
     }
     return res;
   };
@@ -136,7 +135,6 @@ export const partialRight = (func: Function, ...partials: any[]) => {
 
 export const rearg = (func: Function, ...rest: any) => {
   const indexes = rest.flat(); // 1,2,3 => [1,2,3], [1,2,3] => [[1,2,3]], поэтому flat
-  console.log(indexes, " idx");
   return (...args: any) => {
     return func(...indexes.map((idx: number) => args[idx]));
   };
@@ -179,14 +177,6 @@ export const wrap = (value: Function, wrapper: Function) => {
   // }
   return (...args: any) => wrapper(value,...args)
 }
-
-const p = wrap((x: any) => x.repeat(2), function(func: Function,text: string) {
-    return '<p>' + func(text) + '</p>';
-  });
-   
-  console.log(p('fred, barney, & pebbles'));
-  // => '<p>fred, barney, &amp; pebbles</p>'
-
 
 
 
